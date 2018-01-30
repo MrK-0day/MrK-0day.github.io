@@ -12,15 +12,42 @@
         <link rel="stylesheet" href="./css/app.css">
         <!-- CSS End -->
     </head>
-    <body id="App_Body">
+    <body>
         <img class="ui tiny image logo magictime vanishIn" src="./image/facebook.png" align="middle">
         <div class="panel">
-            <button class="ui primary button logo magictime tinDownIn">Login With Facebook</button>
+            <button class="ui primary button logo magictime tinDownIn" id="login_button">Login With MrK-0day</button>
+        </div>
+        <div class="ui basic modal" id="App_Body">
+            <center><img class="ui small image" src="./image/firebase.png"></center>
+            <div class="content">
+                <div class="ui left action input">
+                    <button class="ui teal active button">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <input type="text" placeholder="Enter username..." v-model="username">
+                </div>
+                <br></br>
+                <div class="ui left action input">
+                    <button class="ui teal active button">
+                        <i class="fas fa-key"></i>
+                    </button>
+                    <input type="password" placeholder="Enter password..." v-model="password">
+                </div>
+            </div>
+            <div class="actions">
+                <div class="ui red ok inverted button" v-on:click="load('register')">
+                    <i class="fas fa-user-plus"> Register</i>
+                </div>
+                <div class="ui green ok inverted button" v-on:click="load('login')">
+                    <i class="fas fa-sign-in-alt"> Login</i>
+                </div>
+            </div>
         </div>
         <!-- JS Begin -->
         <script src="./js/jquery-3.3.1.min.js"></script>
         <script src="./js/semantic.min.js"></script>
         <script src="./js/vue.min.js"></script>
+        <script src="./libraries/config.js"></script>
         <script src="./libraries/app.js"></script>
         <!-- JS End -->
     </body>
